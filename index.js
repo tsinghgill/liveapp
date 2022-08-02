@@ -140,6 +140,6 @@ exports.App = class App {
     // is relevant to the datastore (e.g., table, bucket, collection, etc.)
     // If additional connector configs are needed, provided another argument i.e.
     // {"behavior.on.null.values": "ignore"}
-    await destination.write(anonymized, 'collection_archive');
+    await destination.write(anonymized, 'collection_archive', 'postgres');
   }
 };
