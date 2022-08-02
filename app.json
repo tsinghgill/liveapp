@@ -1,0 +1,6 @@
+{
+    "name": "liveapp",
+    "language": "javascript",
+    "environment": "common",
+    "resources": { "source_name": "pg_db" }
+}
