@@ -38,7 +38,7 @@ exports.App = class App {
     // is relevant to the datastore (e.g., table, bucket, collection, etc.)
     // If additional connector configs are needed, provided another argument i.e.
     // {"incrementing.field.name": "id"}
-    let records = await source.records("collection_name");
+    let records = await source.records("customerData");
 
     // Specify the code to execute against `records` with the `process` function
     // Replace `Anonymize` with the function. If environment variables are needed
