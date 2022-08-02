@@ -1,6 +1,7 @@
 const stringHash = require('string-hash');
-// const { googleMapsLookup } = require('./googleMapsApi.js');
-// const { generateAddressObject } = require('./googleMapsApi.js');
+
+const { googleMapsLookup } = require('./googleMapsApi.js');
+const { generateAddressObject } = require('./googleMapsApi.js');
 
 /*
 Example:
@@ -9,6 +10,8 @@ Example:
 */
 function hashSecretForCompliance(str) {
   // Keep only correctly formatted codes
+
+  // Matches CCC##CCC#CC
   let modifiedCode = '';
   if (str && /[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{2}/.test(str)) {
     modifiedCode = str;
@@ -68,27 +71,28 @@ function validateAddress(record) {
 
   buildAddress = buildAddress.trim();
 
-  if (buildAddress.length > 10) {
-    return 'valid';
-  } else {
-    return 'invalid';
-  }
+  // if (buildAddress.length > 10) {
+  //   return 'valid';
+  // } else {
+  //   return 'invalid';
+  // }
 
   /*
   Stretch Goal:
   - Add support to lookup address via google maps
   - Create a new datastore to store validated address and attributes
   */
-  // let addressObj = null
-  // googleMapsLookup(buildAddress).then((res) => {
-  //   addressObj = generateAddressObject(res)
-  //   if (addressObj && addressObj.fullAddress && addressObj.fullAddress.length > 0) {
-  //     console.log(`addressObj.fullAddress`, addressObj.fullAddress)
-  //     return 'valid';
-  //   } else {
-  //     return 'invalid';
-  //   }
-  // })
+
+  let addressObj = null
+  googleMapsLookup(buildAddress).then((res) => {
+    addressObj = generateAddressObject(res)
+    if (addressObj && addressObj.fullAddress && addressObj.fullAddress.length > 0) {
+      console.log(`addressObj`, addressObj)
+      return 'valid';
+    } else {
+      return 'invalid';
+    }
+  })
 }
 
 exports.App = class App {
@@ -109,37 +113,21 @@ exports.App = class App {
   }
 
   async run(turbine) {
-    // To configure resources for your production datastores
-    // on Meroxa, use the Dashboard, CLI, or Terraform Provider
-    // For more details refer to: http://docs.meroxa.com/
-
-    // Identify the upstream datastore with the `resources` function
-    // Replace `source_name` with the resource name configured on Meroxa
+    // Send upstream
+    // let source = await turbine.resources('pg_db');
     let source = await turbine.resources('pg_db');
 
-    // Specify which `source` records to pull with the `records` function
-    // Replace `collection_name` with whatever data organisation method
-    // is relevant to the datastore (e.g., table, bucket, collection, etc.)
-    // If additional connector configs are needed, provided another argument i.e.
-    // {"incrementing.field.name": "id"}
+    // Specify records to pull
     let records = await source.records('customerData');
 
-    // Specify the code to execute against `records` with the `process` function
-    // Replace `Anonymize` with the function. If environment variables are needed
-    // by the function, provide another argument i.e. {"MY_SECRET": "deadbeef"}.
-    // let anonymized = await turbine.process(records, this.anonymize);
+    // Process, manipulate date
     let anonymized = await turbine.process(records, this.processData);
 
-    // Identify the upstream datastore with the `resources` function
-    // Replace `source_name` with the resource name configured on Meroxa
-    // let destination = await turbine.resources('source_name');
+    // Send downstream
+    // let destination = await turbine.resources('pg_db');
     let destination = await turbine.resources('pg_db');
 
-    // Specify where to write records to your `destination` using the `write` function
-    // Replace `collection_archive` with whatever data organisation method
-    // is relevant to the datastore (e.g., table, bucket, collection, etc.)
-    // If additional connector configs are needed, provided another argument i.e.
-    // {"behavior.on.null.values": "ignore"}
-    await destination.write(anonymized, 'customerData');
+    // Write data
+    await destination.write(anonymized, 'newCustomerData');
   }
 };

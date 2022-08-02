@@ -1,0 +1,131 @@
+{
+    "customer_data": [{
+            "key": 1,
+            "value": {
+                "schema": {
+                    "name": "customer_data",
+                    "optional": false,
+                    "type": "struct",
+                    "fields": [
+                        { "field": "id", "optional": false, "type": "int32" },
+                        { "field": "name", "optional": false, "type": "string" },
+                        { "field": "phone", "optional": false, "type": "string" },
+                        { "field": "email", "optional": false, "type": "string" },
+                        { "field": "address", "optional": false, "type": "string" },
+                        { "field": "postalZip", "optional": false, "type": "string" },
+                        { "field": "region", "optional": false, "type": "string" },
+                        { "field": "country", "optional": false, "type": "string" },
+                        { "field": "secretCode", "optional": false, "type": "varchar" }
+                    ]
+                },
+                "payload": {
+                    "id": 1,
+                    "name": "Ivor Daniel",
+                    "phone": "1-258-773-6733",
+                    "email": "tempus.risus@outlook.net",
+                    "address": "",
+                    "postalzip": "8238",
+                    "region": "West Region",
+                    "country": "Ireland",
+                    "secretcode": "JLH88YUS9XX"
+                }
+            }
+        },
+        {
+            "key": 2,
+            "value": {
+                "schema": {
+                    "name": "customer_data",
+                    "optional": false,
+                    "type": "struct",
+                    "fields": [
+                        { "field": "id", "optional": false, "type": "int32" },
+                        { "field": "name", "optional": false, "type": "string" },
+                        { "field": "phone", "optional": false, "type": "string" },
+                        { "field": "email", "optional": false, "type": "string" },
+                        { "field": "address", "optional": false, "type": "string" },
+                        { "field": "postalZip", "optional": false, "type": "string" },
+                        { "field": "region", "optional": false, "type": "string" },
+                        { "field": "country", "optional": false, "type": "string" },
+                        { "field": "secretCode", "optional": false, "type": "varchar" }
+                    ]
+                },
+                "payload": {
+                    "id": 2,
+                    "name": "Hayfa Hicks",
+                    "phone": "(307) 377-2121",
+                    "email": "fermentum.metus@outlook.couk",
+                    "address": "",
+                    "postalzip": "6184-6822",
+                    "region": "Dōngběi",
+                    "country": "China",
+                    "secretcode": "IYH62DXJ2B1"
+                }
+            }
+        },
+        {
+            "key": 3,
+            "value": {
+                "schema": {
+                    "name": "customer_data",
+                    "optional": false,
+                    "type": "struct",
+                    "fields": [
+                        { "field": "id", "optional": false, "type": "int32" },
+                        { "field": "name", "optional": false, "type": "string" },
+                        { "field": "phone", "optional": false, "type": "string" },
+                        { "field": "email", "optional": false, "type": "string" },
+                        { "field": "address", "optional": false, "type": "string" },
+                        { "field": "postalZip", "optional": false, "type": "string" },
+                        { "field": "region", "optional": false, "type": "string" },
+                        { "field": "country", "optional": false, "type": "string" },
+                        { "field": "secretCode", "optional": false, "type": "varchar" }
+                    ]
+                },
+                "payload": {
+                    "id": 3,
+                    "name": "Ina Rodriquez",
+                    "phone": "(2288933428",
+                    "email": "tortor.nibh.sit@hotmail.net",
+                    "address": "Ap #329-3764 Lectus. Av.",
+                    "postalzip": "3320-6426",
+                    "region": "Calabria",
+                    "country": "Mexico",
+                    "secretcode": "ETQ53JJI8Z1"
+                }
+            }
+        },
+        {
+            "key": 4,
+            "value": {
+                "schema": {
+                    "name": "customer_data",
+                    "optional": false,
+                    "type": "struct",
+                    "fields": [
+                        { "field": "id", "optional": false, "type": "int32" },
+                        { "field": "name", "optional": false, "type": "string" },
+                        { "field": "phone", "optional": false, "type": "string" },
+                        { "field": "email", "optional": false, "type": "string" },
+                        { "field": "address", "optional": false, "type": "string" },
+                        { "field": "postalZip", "optional": false, "type": "string" },
+                        { "field": "region", "optional": false, "type": "string" },
+                        { "field": "country", "optional": false, "type": "string" },
+                        { "field": "secretCode", "optional": false, "type": "varchar" }
+                    ]
+                },
+                "payload": {
+                    "id": 4,
+                    "name": "Hyatt Everett",
+                    "phone": "23 15 26 842 5",
+                    "email": "urna.suscipit.nonummy@google.couk",
+                    "address": "194 Sit St.",
+                    "postalzip": "12-53",
+                    "region": "Veracruz",
+                    "country": "Austria",
+                    "secretcode": "SKT11VGP4V1"
+                }
+            }
+        }
+    ]
+}

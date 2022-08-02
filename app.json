@@ -2,5 +2,5 @@
     "name": "liveapp",
     "language": "javascript",
     "environment": "common",
-    "resources": { "source_name": "fixtures/demo-no-cdc.json" }
+    "resources": { "source_name": "fixtures/address-no-cdc.json" }
 }
