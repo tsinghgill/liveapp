@@ -2,5 +2,5 @@
     "name": "liveapp",
     "language": "javascript",
     "environment": "common",
-    "resources": { "pg_db": "customerData" }
+    "resources": { "source_name": "fixtures/demo-no-cdc.json" }
 }
