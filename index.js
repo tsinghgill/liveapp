@@ -29,6 +29,7 @@ exports.App = class App {
 
     // Send downstream
     let destination = await turbine.resources('liveapp_pg_db');
+    // let destination = await turbine.resources('etl_demo_s3');
 
     // Write data
     await destination.write(anonymized, 'processed_customer_data');
