@@ -8,8 +8,8 @@ exports.App = class App {
         hashSecretForCompliance(record.get('secretcode'))
       );
       
-      const validaddress = validateAddress(record)
-      record.set('validaddress', validaddress);
+      // const validaddress = validateAddress(record)
+      // record.set('validaddress', validaddress);
 
       record.set('phone', cleanPhone(record.get('phone')));
     });

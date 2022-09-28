@@ -50,24 +50,24 @@ function validateAddress(record) {
     
     const payload = record.value.payload;
     console.log(`[validateAddress] payload:`, payload)
-    
+
     let buildAddress = '';
 
-    if (payload.address.length > 0) {
+    if (payload?.address?.length > 0) {
         buildAddress = buildAddress + ' ' + payload.address;
     } else {
         return 'invalid';
     }
 
-    if (payload.region.length > 0) {
+    if (payload?.region?.length > 0) {
         buildAddress = buildAddress + ' ' + payload.region;
     }
 
-    if (payload.country.length > 0) {
+    if (payload?.country?.length > 0) {
         buildAddress = buildAddress + ' ' + payload.country;
     }
 
-    if (payload.postalzip.length > 0) {
+    if (payload?.postalzip?.length > 0) {
         buildAddress = buildAddress + ' ' + payload.postalzip;
     }
 
