@@ -46,7 +46,11 @@ Data Enrichment Example:
 - Future could also use a webhook to automate sending mail (ie: signup bonus, coupons, gift basket)
 */
 function validateAddress(record) {
+    console.log(`[validateAddress] record:`, record)
+    
     const payload = record.value.payload;
+    console.log(`[validateAddress] payload:`, payload)
+    
     let buildAddress = '';
 
     if (payload.address.length > 0) {
